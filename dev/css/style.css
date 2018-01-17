@@ -1,0 +1,1749 @@
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #e8e8e8;
+  margin: 0 auto;
+  max-width: 1060px;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 1.125em;
+}
+
+a {
+  color: #0c78c5;
+}
+
+.hidden,
+.flex.hidden {
+  display: none;
+}
+
+.quiet {
+  color: #ccc;
+}
+
+.required {
+  color: red;
+  padding-left: 3px;
+}
+
+button {
+  background-color: #0c78c5;
+  border: none;
+  color: white;
+  margin-bottom: 2em;
+  padding: .5em 2em;
+  transition: background-color .5s;
+}
+
+button:hover {
+  background-color: #063d65;
+}
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.sub-section {
+  background: #fff;
+  margin: 2em auto;
+  padding: .25em 2em;
+}
+
+.col-container {
+  clear: both;
+  width: 100%;
+  margin-bottom: 1.5em;
+  overflow: hidden;
+}
+.col-container:after {
+  display: table;
+  content: "";
+}
+
+.col-container.tight {
+  margin-bottom: .5em;
+}
+
+.repeating-fields .col-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[class^="cols-"],
+[class*=" cols-"] {
+  float: left;
+}
+
+.cols-1 {
+  width: 6.25%;
+}
+
+.cols-2 {
+  width: 12.5%;
+}
+
+.cols-3 {
+  width: 18.75%;
+}
+
+.cols-4 {
+  width: 25%;
+}
+
+.cols-5 {
+  width: 31.25%;
+}
+
+.cols-6 {
+  width: 37.5%;
+}
+
+.cols-7 {
+  width: 43.75%;
+}
+
+.cols-8 {
+  width: 50%;
+}
+
+.cols-9 {
+  width: 56.25%;
+}
+
+.cols-10 {
+  width: 62.5%;
+}
+
+.cols-11 {
+  width: 68.75%;
+}
+
+.cols-12 {
+  width: 75%;
+}
+
+.cols-13 {
+  width: 81.25%;
+}
+
+.cols-14 {
+  width: 87.5%;
+}
+
+.cols-15 {
+  width: 93.75%;
+}
+
+.cols-16 {
+  width: 100%;
+}
+
+.cols-third {
+  width: 33.33333%;
+}
+
+.three-up .col-section {
+  float: left;
+  width: 22%;
+}
+
+.column-container {
+  margin-left: -1em;
+}
+
+[class^="columns-"],
+[class*=" columns-"] {
+  float: left;
+  padding-left: 1em;
+}
+
+.columns-1 {
+  width: 6.25%;
+}
+
+.columns-2 {
+  width: 12.5%;
+}
+
+.columns-3 {
+  width: 18.75%;
+}
+
+.columns-4 {
+  width: 25%;
+}
+
+.columns-5 {
+  width: 31.25%;
+}
+
+.columns-6 {
+  width: 37.5%;
+}
+
+.columns-7 {
+  width: 43.75%;
+}
+
+.columns-8 {
+  width: 50%;
+}
+
+.columns-9 {
+  width: 56.25%;
+}
+
+.columns-10 {
+  width: 62.5%;
+}
+
+.columns-11 {
+  width: 68.75%;
+}
+
+.columns-12 {
+  width: 75%;
+}
+
+.columns-13 {
+  width: 81.25%;
+}
+
+.columns-14 {
+  width: 87.5%;
+}
+
+.columns-15 {
+  width: 93.75%;
+}
+
+.columns-16 {
+  width: 100%;
+}
+
+.columns-third {
+  width: 33.33333%;
+}
+
+.three-up .col-section {
+  float: left;
+  width: 22%;
+}
+
+.display {
+  background: #ddd;
+}
+
+input,
+textarea {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-weight: 300;
+  line-height: 1.4;
+  padding: .5em 1em;
+}
+
+label {
+  line-height: 2.5;
+}
+
+input {
+  color: #333;
+  font-weight: 700;
+  height: 2.5em;
+}
+
+input[type=radio] {
+  height: auto;
+  margin-right: .5em;
+}
+
+input[type=file] {
+  background-color: transparent;
+  border: none;
+}
+
+textarea {
+  height: 6em;
+}
+
+input.limited,
+textarea.limited {
+  padding-right: 3rem;
+}
+
+.input-wrapper {
+  clear: both;
+  margin-bottom: 1.5em;
+  position: relative;
+  transition: opacity .2s;
+}
+
+.input-wrapper:before,
+.input-wrapper:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.flex {
+  clear: both;
+  display: flex;
+}
+
+.flex > .main-label {
+  flex-basis: 15%;
+}
+
+.countdown {
+  color: #aaa;
+  font-size: 12px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-align: right;
+}
+
+.countdown.extra {
+  top: 48px;
+}
+
+.warning {
+  color: red;
+  font-weight: 700;
+}
+
+.list-link {
+  background: yellow;
+  cursor: pointer;
+  padding: .75em .5em .5em;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown-input {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-weight: 300;
+  line-height: 1.4;
+  padding: .5em 1em;
+  cursor: pointer;
+  height: 2.5em;
+  width: 100%;
+}
+
+.dropdown-input > .down-arrow {
+  position: absolute;
+  right: 1em;
+  top: 0.825em;
+}
+
+.placeholder {
+  color: #cdcdcd;
+}
+
+.date-and-time {
+  flex-basis: 100%;
+}
+.date-and-time input, .date-and-time label {
+  flex-basis: 20%;
+}
+.date-and-time label {
+  text-align: right;
+  padding-right: 1em;
+  line-height: 2.4;
+}
+
+.inset-fields {
+  margin-left: 13%;
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+.inset-fields label,
+.inset-fields label.main-label,
+.inset-fields .input-wrapper {
+  display: block;
+}
+.inset-fields .input-wrapper {
+  margin-bottom: 1em;
+}
+
+.new-contact-fields:after, .new-contact-fields:before {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.new-contact-fields {
+  position: relative;
+  top: -2em;
+}
+
+.inset-fields.new-contact-fields {
+  top: -2.875em;
+}
+
+.subheading {
+  font-weight: 700;
+}
+
+.three-up {
+  width: 100%;
+}
+
+.one-up-wrapper {
+  float: left;
+  width: 32%;
+  margin-left: 2%;
+  margin-bottom: 1em;
+}
+.one-up-wrapper input {
+  width: 100%;
+}
+.one-up-wrapper label {
+  line-height: 2.4;
+}
+
+.one-up-wrapper:first-of-type {
+  margin-left: 0;
+}
+
+.disabled {
+  opacity: 0.25;
+}
+
+::-webkit-input-placeholder {
+  color: #cdcdcd;
+  font-weight: 100;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #cdcdcd;
+  font-weight: 100;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #cdcdcd;
+  font-weight: 100;
+}
+
+:-ms-input-placeholder {
+  color: #cdcdcd;
+  font-weight: 100;
+}
+
+.two-up {
+  float: left;
+  width: 48%;
+}
+.two-up input {
+  width: 100%;
+}
+.two-up:first-of-type {
+  margin-right: 4%;
+}
+
+.repeating-fields {
+  margin-top: -28px;
+  margin-bottom: 1.5em;
+}
+
+.inset-fields label.subheading {
+  display: inline;
+  font-weight: 700;
+}
+
+.cancel-link {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 1px solid #ccc;
+}
+
+.addresses {
+  color: #aaa;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.addresses span {
+  color: #222;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.event-time label {
+  flex-basis: 17%;
+}
+
+.duplicable {
+  padding: 1em;
+  position: relative;
+}
+.duplicable select {
+  margin-right: 1em;
+}
+
+.duplicable:nth-of-type(even) {
+  background-color: #F4F1E3;
+  margin-bottom: .5em;
+}
+
+.duplicator {
+  display: block;
+  font-size: 14px;
+  padding-left: 18px;
+}
+
+.remover {
+  font-size: 14px;
+}
+
+.help-text {
+  font-size: .825rem;
+  color: #999;
+}
+
+.help-text.after {
+  line-height: 2;
+}
+
+#venues-list {
+  margin-bottom: 1.5em;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 1em;
+  top: 1.75em;
+}
+
+.input-dropdown-wrapper {
+  position: relative;
+  width: 400px;
+}
+
+ul.dropdown.open {
+  display: block;
+}
+
+ul.dropdown {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  top: 2em;
+  left: 0;
+  height: 250px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+ul.dropdown > li {
+  cursor: pointer;
+  line-height: 2;
+  list-style: none;
+  padding: 0 1em;
+}
+
+ul.dropdown > li:hover {
+  background-color: #deebf7;
+}
+
+.existing-venue {
+  border-left: 2px solid #ccc;
+  color: #333;
+  margin-left: 13%;
+  margin-bottom: 2em;
+  padding-left: 2em;
+}
+.existing-venue p {
+  margin: .5em 0;
+}
+
+.no-map .existing-venue {
+  margin-left: 0;
+}
+
+.no-contact-button {
+  background-color: #FFEC2A;
+  border: 1px solid #ccc;
+  border-top: none;
+  cursor: pointer;
+  line-height: 2.4;
+  list-style: none;
+  padding: 0 1em;
+}
+
+.expandable {
+  padding: 0;
+}
+
+.expandable-content {
+  display: none;
+  padding: .25em 2em;
+}
+
+.expandable-inner {
+  padding: .25em 2em;
+}
+
+.expandable-button {
+  cursor: pointer;
+  position: relative;
+}
+
+.expandable-button:before {
+  background: transparent url(../images/downarrow.png) no-repeat right;
+  content: "Optional";
+  padding-right: 1.25em;
+  position: absolute;
+  right: 2em;
+  top: 1.25em;
+}
+
+.expandable h2 {
+  cursor: pointer;
+}
+
+.segmented-control {
+  padding: 0 1em;
+}
+
+.segmented-container {
+  margin: auto;
+  max-width: 700px;
+  min-width: 200px;
+  text-align: center;
+  padding: 0 6em;
+}
+
+#map-canvas {
+  width: 225px;
+  height: 150px;
+}
+
+.location {
+  height: 150px;
+  margin-left: 13%;
+  margin-bottom: 2em;
+}
+
+.map-left {
+  float: left;
+  margin-right: 1em;
+}
+
+.data-right {
+  margin-left: 1em;
+}
+
+.location.no-map {
+  margin-left: 0;
+}
+
+/*! jQuery UI - v1.11.4 - 2015-06-28
+* http://jqueryui.com
+* Includes: core.css, datepicker.css
+* Copyright 2015 jQuery Foundation and other contributors; Licensed MIT */
+/* Layout helpers
+----------------------------------*/
+.ui-datepicker-calendar .ui-state-disabled {
+  color: #ccc;
+}
+
+.ui-datepicker-calendar td a {
+  color: #000;
+}
+
+.ui-helper-hidden {
+  display: none;
+}
+
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+}
+
+.ui-helper-clearfix:after {
+  clear: both;
+}
+
+.ui-helper-clearfix {
+  min-height: 0;
+  /* support: IE7 */
+}
+
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter: Alpha(Opacity=0);
+  /* support: IE8 */
+}
+
+.ui-front {
+  z-index: 100;
+}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+  cursor: default !important;
+}
+
+/* Icons
+----------------------------------*/
+/* states and images */
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+/* Misc visuals
+----------------------------------*/
+/* Overlays */
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ui-datepicker {
+  background-color: white;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+  box-sizing: content-box;
+  width: 17em;
+  padding: .2em 1em .2em 0;
+  display: none;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: .2em 0;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 2px;
+  width: 1.8em;
+  height: 1.8em;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+  top: 1px;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px;
+  background: url(../images/leftarrow.png) no-repeat;
+  background-size: 20px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 2px;
+  background: url(../images/leftarrow.png) no-repeat;
+  background-size: 20px;
+  transform: rotateZ(180deg);
+}
+
+.ui-datepicker .ui-datepicker-prev-hover {
+  left: 1px;
+}
+
+.ui-datepicker .ui-datepicker-next-hover {
+  right: 1px;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0;
+}
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 45%;
+}
+
+.ui-datepicker table {
+  width: 100%;
+  font-size: .9em;
+  border-collapse: collapse;
+  margin: 0 0 .4em;
+}
+
+.ui-datepicker th {
+  padding: .7em .3em;
+  text-align: center;
+  font-weight: bold;
+  border: 0;
+}
+
+.ui-datepicker td {
+  border: 0;
+  padding: 1px;
+}
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: block;
+  padding: .2em;
+  text-align: right;
+  text-decoration: none;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: .7em 0 0 0;
+  padding: 0 .2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: .5em .2em .4em;
+  cursor: pointer;
+  padding: .2em .6em .3em .6em;
+  width: auto;
+  overflow: visible;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+  width: auto;
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+  float: left;
+}
+
+.ui-datepicker-multi .ui-datepicker-group table {
+  width: 95%;
+  margin: 0 auto .4em;
+}
+
+.ui-datepicker-multi-2 .ui-datepicker-group {
+  width: 50%;
+}
+
+.ui-datepicker-multi-3 .ui-datepicker-group {
+  width: 33.3%;
+}
+
+.ui-datepicker-multi-4 .ui-datepicker-group {
+  width: 25%;
+}
+
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+  border-left-width: 0;
+}
+
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+  clear: left;
+}
+
+.ui-datepicker-row-break {
+  clear: both;
+  width: 100%;
+  font-size: 0;
+}
+
+/* RTL support */
+.ui-datepicker-rtl {
+  direction: rtl;
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev {
+  right: 2px;
+  left: auto;
+}
+
+.ui-datepicker-rtl .ui-datepicker-next {
+  left: 2px;
+  right: auto;
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+  right: 1px;
+  left: auto;
+}
+
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+  left: 1px;
+  right: auto;
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+  clear: right;
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+  float: left;
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+  float: right;
+}
+
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+  border-right-width: 0;
+  border-left-width: 1px;
+}
+
+.ui-timepicker-wrapper {
+  overflow-y: auto;
+  height: 150px;
+  width: 6.5em;
+  background: #fff;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+  z-index: 10001;
+  margin: 0;
+}
+
+.ui-timepicker-wrapper.ui-timepicker-with-duration {
+  width: 13em;
+}
+
+.ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-30,
+.ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-60 {
+  width: 11em;
+}
+
+.ui-timepicker-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ui-timepicker-duration {
+  margin-left: 5px;
+  color: #888;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-duration {
+  color: #888;
+}
+
+.ui-timepicker-list li {
+  padding: 3px 0 3px 5px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #000;
+  list-style: none;
+  margin: 0;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-selected {
+  background: #fff;
+  color: #000;
+}
+
+li.ui-timepicker-selected,
+.ui-timepicker-list li:hover,
+.ui-timepicker-list .ui-timepicker-selected:hover {
+  background: #1980EC;
+  color: #fff;
+}
+
+li.ui-timepicker-selected .ui-timepicker-duration,
+.ui-timepicker-list li:hover .ui-timepicker-duration {
+  color: #ccc;
+}
+
+.ui-timepicker-list li.ui-timepicker-disabled,
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+  color: #888;
+  cursor: default;
+}
+
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+  background: #f2f2f2;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+.nav-tabs:before {
+  display: table;
+  content: " ";
+}
+.nav-tabs:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 1.5em;
+  list-style: none;
+}
+
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  color: #000;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-color: transparent;
+}
+
+.nav-tabs > li > a {
+  color: #888;
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.tab-content > .tab-pane {
+  border: 1px solid #ccc;
+  display: none;
+  overflow: hidden;
+  padding: 1em;
+  border-top: none;
+  margin-top: -1.25em;
+  margin-bottom: 1.5em;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+.toggleable {
+  overflow: hidden;
+}
+
+.toggle {
+  float: left;
+  margin-top: .625em;
+  margin-left: 1em;
+}
+
+.toggle-title {
+  float: left;
+}
+
+input[switch] {
+  display: none;
+}
+
+input[switch] + label {
+  font-size: 1em;
+  line-height: 1;
+  width: 4rem;
+  height: 2rem;
+  background-color: #ddd;
+  background-image: none;
+  border-radius: 2rem;
+  padding: 0.16667rem;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2) inset;
+  font-family: inherit;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+input[switch] + label:before {
+  /* Label */
+  text-transform: uppercase;
+  color: #b7b7b7;
+  content: attr(data-off-label);
+  display: block;
+  font-family: inherit;
+  font-family: FontAwesome, inherit;
+  font-weight: 500;
+  font-size: 0.7rem;
+  line-height: 1.74rem;
+  position: absolute;
+  right: 0.21667rem;
+  margin: 0.21667rem;
+  top: 0;
+  text-align: center;
+  min-width: 1.66667rem;
+  overflow: hidden;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+input[switch] + label:after {
+  /* Slider */
+  content: '';
+  position: absolute;
+  left: 0.16667rem;
+  background-color: #f7f7f7;
+  box-shadow: none;
+  border-radius: 2rem;
+  height: 1.66667rem;
+  width: 1.66667rem;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+input[switch]:checked + label {
+  background-color: lightblue;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.2));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3) inset;
+}
+
+input[switch]:checked + label:before {
+  color: #fff;
+  content: attr(data-on-label);
+  right: auto;
+  left: 0.21667rem;
+}
+
+input[switch]:checked + label:after {
+  left: 2.16667rem;
+  background-color: #f7f7f7;
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+input[switch="bool"] + label {
+  background-color: #ee6562;
+}
+
+input[switch="bool"] + label:before {
+  color: #fff !important;
+}
+
+input[switch="bool"]:checked + label {
+  background-color: #BCE954;
+}
+
+input[switch="bool"]:checked + label:before {
+  color: #fff !important;
+}
+
+input[switch="default"]:checked + label {
+  background-color: #a2a2a2;
+}
+
+input[switch="default"]:checked + label:before {
+  color: #fff !important;
+}
+
+input[switch="success"]:checked + label {
+  background-color: #BCE954;
+}
+
+input[switch="success"]:checked + label:before {
+  color: #fff !important;
+}
+
+input[switch="warning"]:checked + label {
+  background-color: gold;
+}
+
+input[switch="warning"]:checked + label:before {
+  color: #fff !important;
+}
+
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#sortable li {
+  cursor: pointer;
+  line-height: 2.4;
+  margin: 0 3px 3px 3px;
+  padding: 0.4em;
+  padding-left: 2.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+}
+
+#sortable li span {
+  position: absolute;
+  margin-left: -1.3em;
+}
+
+.ui-sortable-handle {
+  border: 1px solid #d3d3d3;
+  background: #e6e6e6 url("../images/move-icon.png") no-repeat 10px center;
+  background-size: 14px;
+  font-weight: normal;
+  color: #555555;
+}
+
+#sortable li span {
+  position: absolute;
+  margin-left: -1.3em;
+}
+
+.ui-sortable-new-event {
+  background-color: #BCE954;
+}
+.ui-sortable-new-event:before {
+  background-image: none;
+}
+
+.delete-button {
+  display: block-inline;
+  background: url("../images/close-icon.png") no-repeat;
+  position: absolute;
+  right: .5em;
+  top: 1em;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.featured-title-wrapper:after, .featured-title-wrapper:before {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+.featured-event {
+  margin-top: 1em;
+}
+
+.display {
+  background: #ddd;
+}
+
+.lc-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.layout-container {
+  display: flex;
+  width: 100%;
+  margin-left: -2em;
+}
+
+.fcolumn {
+  margin: 0 auto;
+  padding-left: 2em;
+}
+
+.fcolumns-8 {
+  max-width: 70%;
+}
+
+.fcolumns-4 {
+  flex: 0 0 340px;
+}
+
+.layout-settings label {
+  margin-right: 2em;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,68 @@
+#venues-list {
+  margin-bottom: 1.5em;
+}
+
+.dropdown-arrow{
+  position: absolute;
+  right: 1em;
+  top: 1.75em;
+}
+
+.input-dropdown-wrapper {
+  position: relative;  
+  width: 400px;
+}
+
+ul.dropdown.open {
+  display: block;
+}
+
+ul.dropdown {
+  background-color: #fff;
+  // display: none;
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  top: 2em;
+  left: 0;
+  height: 250px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+ul.dropdown > li {
+  cursor: pointer;
+  line-height: 2;
+  list-style: none;
+  padding: 0 1em;
+}
+
+ul.dropdown > li:hover {
+  background-color: rgb(222, 235, 247);
+}
+
+.existing-venue {
+  border-left: 2px solid #ccc;
+  color: #333;
+  margin-left: 13%;
+  margin-bottom: 2em;
+  padding-left: 2em;
+  
+  p {
+    margin: .5em 0;
+  }
+}
+
+.no-map .existing-venue {
+  margin-left: 0;
+}
+
+.no-contact-button {
+  background-color: #FFEC2A;
+  border: 1px solid #ccc;
+  border-top: none;
+  cursor: pointer;
+  line-height: 2.4;
+  list-style: none;
+  padding: 0 1em;
+}

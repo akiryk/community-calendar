@@ -1,0 +1,52 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #e8e8e8;
+  margin: 0 auto;
+  max-width: 1060px;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 1.125em;
+}
+
+a {
+  color: rgb(12, 120, 197);
+}
+
+.hidden,
+.flex.hidden {
+  display: none;
+}
+
+.quiet {
+  color: #ccc;
+}
+
+.required {
+  color: red;
+  padding-left: 3px;
+}
+
+button {
+  background-color: #0c78c5;
+  border: none;
+  color: white;
+  margin-bottom: 2em;
+  padding: .5em 2em;
+  transition: background-color .5s;
+}
+
+button:hover {
+  background-color: darken(#0c78c5, 20%);
+}

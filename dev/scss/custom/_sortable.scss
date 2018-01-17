@@ -1,0 +1,66 @@
+#sortable { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  width: 100%; 
+}
+
+#sortable li { 
+  cursor: pointer;
+  line-height: 2.4;
+  margin: 0 3px 3px 3px; 
+  padding: 0.4em; 
+  padding-left: 2.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis; 
+}
+
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+
+
+
+.ui-sortable-handle {
+  border: 1px solid #d3d3d3;
+  background: #e6e6e6 url("../images/move-icon.png") no-repeat 10px center;
+  background-size: 14px;
+  font-weight: normal;
+  color: #555555;
+  
+  // &:before {
+  //   background: url("../images/close-icon.png") no-repeat;
+  //   content: "";
+  //   position: absolute;
+  //   right: .5em;
+  //   top: 1em;
+  //   background-size: 20px;
+  //   width: 20px;
+  //   height: 20px;
+  // }
+}
+
+#sortable li span {
+  position: absolute;
+  margin-left: -1.3em;
+}
+
+
+.ui-sortable-new-event {
+  background-color: #BCE954;
+  &:before {
+    background-image: none;
+  }
+
+}
+
+.delete-button {
+  display: block-inline;
+  background: url("../images/close-icon.png") no-repeat;
+  position: absolute;
+  right: .5em;
+  top: 1em;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,23 @@
+#map-canvas {
+  width: 225px;
+  height: 150px;
+}
+
+.location {
+  height: 150px;
+  margin-left: 13%;
+  margin-bottom: 2em;
+}
+
+.map-left {
+  float: left;
+  margin-right: 1em;
+}
+
+.data-right {
+  margin-left: 1em;
+}
+
+.location.no-map {
+  margin-left: 0;
+}

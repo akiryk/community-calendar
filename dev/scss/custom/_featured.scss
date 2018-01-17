@@ -1,0 +1,12 @@
+.featured-title-wrapper {
+  &:after,
+  &:before {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+.featured-event {
+  margin-top: 1em;
+}

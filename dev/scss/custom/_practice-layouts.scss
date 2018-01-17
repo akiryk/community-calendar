@@ -1,0 +1,35 @@
+// for practice layout page
+.display {
+  background: #ddd;
+}
+
+.lc-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.layout-container {
+  display: flex;
+  width: 100%;
+  margin-left: -2em;
+}
+
+.fcolumn {
+  margin: 0 auto;
+  padding-left: 2em;
+}
+
+.fcolumns-8 {
+  max-width: 70%;
+}
+
+.fcolumns-4 {
+  flex:0 0 340px;
+}
+
+.layout-settings {
+  label {
+    margin-right: 2em;
+  }
+}

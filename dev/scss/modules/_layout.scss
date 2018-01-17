@@ -1,0 +1,88 @@
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.sub-section {
+  background: #fff;
+  
+  margin: 2em auto;
+  padding: .25em 2em;
+}
+
+// GRID
+
+.col-container {
+  clear: both;
+  width: 100%;
+  margin-bottom: 1.5em;
+  overflow: hidden;
+  &:after {
+    display: table;
+    content: "";
+  }
+}
+
+.col-container.tight {
+  margin-bottom: .5em;
+}
+
+.repeating-fields .col-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[class^="cols-"],
+[class*=" cols-"] {
+  float: left;
+}
+
+$columns: 16;
+
+@for $i from 1 through $columns {
+  .cols-#{$i} {
+    width: percentage($i/$columns);
+  }
+}
+
+.cols-third {
+  width: 33.33333%;
+}
+
+.three-up .col-section {
+  float: left;
+  width: 22%;
+}
+
+// *************
+
+.column-container {
+  margin-left: -1em;
+}
+
+[class^="columns-"],
+[class*=" columns-"] {
+  float: left;
+  padding-left: 1em;
+}
+
+@for $j from 1 through $columns {
+  .columns-#{$j} {
+    width: percentage($j/$columns);
+  }
+}
+
+.columns-third {
+  width: 33.33333%;
+}
+
+.three-up .col-section {
+  float: left;
+  width: 22%;
+}
+
+.display {
+  background: #ddd;
+}

@@ -1,0 +1,467 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!--
+    live reload script
+    (comment this out) build:remove
+    <script src="http://localhost:35729/livereload.js"></script>
+    (comment this out) /build
+    -->
+
+    <!-- build:remove -->
+      <script src="http://localhost:35729/livereload.js"></script>
+    <!-- /build -->
+
+    <title>Submit an Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dev/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="main-heading">Submit an Event!</h1>
+
+    <section class="sub-section">
+      <h2>General Information</h2>
+
+      <div class="input-wrapper one-up" id="event-title">
+        <label class="cols-2" for="title">Title<span class="required">*</span></label>
+        <input type="text" id="title" class="limited main-input cols-14" maxlength="100" placeholder="e.g. Community Arts Festival, featuring dance, food, and music" />
+        <div class="countdown"><span class="chars-remaining"></span></div>
+      </div>
+
+      <div class="input-wrapper one-up select-from-list" id="event-venue">
+        <label class="cols-2" for="venues">Venue<span class="required">*</span></label>
+        <div class="dropdown-wrapper cols-14">
+          <div tabindex="0" class="dropdown-input main-input">
+            <span class="placeholder selection">Select a venue</span>
+            <img class="down-arrow" src="dev/images/downarrow.png" alt="">
+          </div>
+          <div id="venues-list" class="hidden contacts-list">
+            <ul class="dropdown addresses">
+              <li data-city="Boston" data-state="MA" data-zipcode="02108" data-email="abcv@abc-venues.com" data-website="http://www.abcvenue.com"><span>ABC Venue</span>, 101 Whatever Blvd, Somerville, MA</li>
+              <li data-city="Seattle" data-state="WA" data-zipcode="98101" data-email="abcv@abc-venues.com" data-website="http://www.abcvenue.com"><span>Abocaria Facilities</span>, 21 River Street, Seattle, WA</li>
+              <li data-address="152 2nd Ave N" data-city="Nashville" data-state="TN" data-zipcode="37201" data-phone="(615) 256-2727" data-email="info@bbclub1.com" data-website="http://www.bbkings.com/nashville/"><span>BB Blues Club</span>, 152 2nd Ave N, Nashville, TN</li>
+              <li data-address="416 Broadway" data-city="Nashville" data-state="TN" data-zipcode="37203" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>BB Blues Club</span>, 416 Broadway, Nashville, TN</li>
+              <li data-address="300 East First St" data-city="Boston" data-state="MA" data-zipcode="37203" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>Amzee and Amzee Park</span>, 300 East First St, Boston, MA</li>
+              <li data-address="416 Broadway" data-city="Nashville" data-state="TN" data-zipcode="37203" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>Ayo Stadium</span>, 416 Broadway, Nashville, TN</li>
+              <li data-city="Providence" data-state="RI" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://backbay.com/"><span>Backbay Community Center</span>, Providence, RI</li>
+              <li data-address="1530 Berkeley Way" data-city="Berkeley" data-state="CA" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>Bayard County Park</span>, 1530 Berkeley Way, Berkeley, CA</li>
+              <li data-address="22 Fresh Pond Lane" data-city="Cambridge" data-state="MA" data-zipcode="02138" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Banners Half-Shell</span>, 22 Fresh Pond Lane, Cambridge, MA</li>
+              <li data-address="44 Larchwood Rd" data-city="Cambridge" data-state="MA" data-zipcode="02138" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Benjamin Greenspace Stages</span>, 44 Larchwood Rd, Cambridge, MA</li>
+              <li data-address="1720 Massachusetts Ave" data-city="Lexington" data-state="MA" data-zipcode="02420" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Bicycle Cafe</span>, 1720 Massachusetts Ave, Lexington, MA</li>
+              <li data-address="22 Fresh Pond Parkway" data-city="Cambridge" data-state="MA" data-zipcode="02138" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Boomerangs Nightclub, West</span>, 22 Fresh Pond Parkway, Cambridge, MA</li>
+            </ul>
+            <div class="no-contact-button">Don't see your venue?</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="existing-venue" class="hidden location existing-contact">
+        <div id="map-canvas" class="map-left"></div>
+        <div class="dynamic-html" class="data-right"></div>
+      </div>
+
+      <div id="new-venue" class="hidden inset-fields new-contact-fields">
+      <label class="main-label subheading">Add A New Venue</label><a href="#" class="cancel-link">Cancel</a>
+        <div class="input-wrapper cols-16" id="event-venue-name">
+          <label class="main-label cols-16" for="name">Venue Name<span class="required">*</span></label>
+          <input class="main-input cols-16" type="text" id="name" />
+        </div>
+        <div class="input-wrapper cols-16" id="event-venue-address">
+          <label class="main-label cols-16" for="address">Address<span class="required">*</span></label>
+          <input class="main-input cols-16" type="text" id="address" />
+        </div>
+        <div class="three-up">
+          <div class="one-up-wrapper">
+            <label class="" for="address">City:<span class="required">*</span></label>
+            <input class="" type="text" id="address"  />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="" for="address">State:<span class="required">*</span></label>
+            <input class="" type="text" id="address" />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="" for="address">Zip/Postal Code:</label>
+            <input class="" type="text" id="address"  />
+          </div>
+        </div>
+
+         <div class="three-up">
+          <div class="one-up-wrapper">
+            <label class="" for="address">Phone:</label>
+            <input class="" type="text" id="address" placeholder="Hello there" />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="" for="address">Email:</label>
+            <input class="" type="text" id="address" placeholder="Hello there" />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="" for="address">Website Address:</label>
+            <input class="" type="text" id="address" placeholder="Hello there" />
+          </div>
+        </div>
+      </div>
+
+      <ul id="recurrenceTabs" class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">One-Time Event</a>
+        </li>
+        <li role="presentation" class="">
+          <a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">Recurring Event</a>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+
+      <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
+        <div class="three-up" id="event-date">
+          <div class="one-up-wrapper">
+            <label class="" for="when">Date<span class="required">*</span></label>
+            <input id="start-date" type="text" class="datepicker start-date-input cols-date" id="" placeholder="7/3/2015" />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="cls-2">Start time<span class="required">*</span></label>
+            <input type="text" class="start-time-input timepicker cls-date" placeholder="6:00pm" />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="cls-2">End time</label>
+            <input type="text" placeholder="10:00pm" class="end-time-input timepicker cols-date"/>
+          </div>
+        </div>
+      </div>
+
+      <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+        <div class="input-wrapper">
+        <div class="segmented-control main-input col-container">
+          <label class="cols-third"><input type="radio" name="sc-1-1" id="sc-1-1-1" checked> Repeats Daily</label>
+          <label class="cols-third"><input type="radio" name="sc-1-1" id="sc-1-1-2"> Repeats Weekly</label>
+          <label class="cols-third"><input type="radio" name="sc-1-1" id="sc-1-1-3"> Repeats Monthly</label>
+        </div>
+        </div>
+        <div class="repeating-fields" id="repeat-daily">
+          <div class="col-container">
+            <div class="cols-7">
+              <label class="cols-6" for="when">Start Date<span class="required">*</span></label>
+              <input type="text" class="datepicker start-date-input cols-10" id="" placeholder="7/3/2015" />
+            </div>
+            <div class="cols-1">&nbsp;</div>
+            <div class="cols-8">
+              <label class="cols-6">End Date<span class="required">*</span></label>
+              <input type="text" class="start-date-input datepicker cols-10" placeholder="7/3/2015" />
+            </div>
+          </div>
+          <div class="col-container">
+            <div class="cols-7">
+              <label class="cols-6" for="when">Start Time<span class="required">*</span></label>
+              <input type="text" class="timepicker start-time-input cols-10" id="" placeholder="6:00pm" />
+            </div>
+            <div class="cols-1">&nbsp;</div>
+            <div class="cols-8">
+              <label class="cols-6">End Time</label>
+              <input type="text" class="start-time-input timepicker cols-10" placeholder="6:00pm" />
+            </div>
+          </div>
+        </div>
+           <!-- Repeat Daily -->
+        <div class="repeating-fields hidden" id="repeat-weekly">
+           <div class="col-container">
+             <div class="cols-16">Display fields for weekly recurrence...</div>
+            </div>
+        </div>
+
+          <!-- Repeat Weekly -->
+        <div class="repeating-fields hidden" id="repeat-monthly">
+          <div class="col-container">
+            <div class="cols-16">Display fields for monthly recurrence...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="input-wrapper duplicator-group">
+        <label>Category<span class="required">*</span></label> <span class="help-text">Add up to three categories</span>
+        <div class="duplicable">
+          <select name="" id="">
+            <option value="" selected>Select a category</option>
+            <option value="">Arts</option>
+            <option value="">Automobiles</option>
+            <option value="">Boating/Sailing</option>
+            <option value="">Carnivals</option>
+            <option value="">Community</option>
+            <option value="">Fairs</option>
+            <option value="">Farm and Gardens</option>
+            <option value="">Food</option>
+            <option value="">Free Events</option>
+            <option value="">Health and Wellness</option>
+            <option value="">Hiking and Outdoor Activities</option>
+            <option value="">Kids & Family</option>
+            <option value="">Live Music</option>
+            <option value="">Live Music: Classical</option>
+            <option value="">Live Music: Folk</option>
+            <option value="">Live Music: Jazz</option>
+            <option value="">Live Music: Pop</option>
+            <option value="">Live Music, General</option>
+            <option value="">Museums and Galleries</option>
+            <option value="">Nature/Parks</option>
+            <option value="">Nightlife</option>
+            <option value="">NPR Live Programs</option>
+            <option value="">Outdoor Concerts</option>
+            <option value="">Restaurants</option>
+            <option value="">Self-improvement</option>
+            <option value="">Summer Camps</option>
+            <option value="">Summer Fun</option>
+            <option value="">Sports: Active Events</option>
+            <option value="">Sports: Running Events</option>
+            <option value="">Sports: Biking Events</option>
+            <option value="">Theater Performance: Dance</option>
+            <option value="">Theater Performance: Musical</option>
+            <option value="">Theater Performance: Plays</option>
+            <option value="">Winter Fun</option>
+            <option value="">Volunteer</option>
+          </select>
+          <a href="#" class="remover hidden">Remove category</a>
+        </div>
+        <a href="#" class="duplicator">Add another category</a>
+      </div>
+
+      <div class="input-wrapper" id="event-description">
+        <label class="main-label cols-16" for="desc">Description</label>
+        <textarea id="desc" class="main-input limited cols-16" maxlength="300" placeholder="Tell us about your event." ></textarea>
+        <div class="countdown extra"><span class="chars-remaining"></span></div>
+      </div>
+
+      <div class="input-wrapper">
+        <label class="cols-16">For more information, people can visit this website</label>
+        <input class="cols-16" type="URL" placeholder="www.event-site.com" />
+      </div>
+
+      <div class="input-wrapper">
+        <label>Event Image</label>
+        <input type="file" placeholder="" />
+      </div>
+
+
+      <div class="input-wrapper one-up select-from-list">
+        <label class="cols-16" for="orgs">Presenting Organization</label>
+        <div class="dropdown-wrapper cols-16">
+          <div class="dropdown-input main-input ">
+            <span class="placeholder selection">Select an organization</span>
+            <img class="down-arrow" src="dev/images/downarrow.png" alt="">
+          </div>
+          <div id="orgs-list" class="hidden contacts-list">
+            <ul class="dropdown addresses">
+              <li data-name="American Organization A" data-phone="(617) 555-1234" data-email="info@orga.com" data-website="organization-a.com" data-designation="Designation: N/A"><span>American Organization A</span></li>
+              <li data-city="Seattle" data-state="WA" data-zipcode="98101" data-email="abcv@abc-venues.com" data-website="http://www.abcvenue.com"><span>American Organization B</span>, 21 River Street, Seattle, WA</li>
+              <li data-address="152 2nd Ave N" data-city="Nashville" data-state="TN" data-zipcode="37201" data-phone="(615) 256-2727" data-email="info@bbclub1.com" data-website="http://www.bbkings.com/nashville/"><span>Community Fun Group</span>, 152 2nd Ave N, Nashville, TN</li>
+              <li data-address="416 Broadway" data-city="Nashville" data-state="TN" data-zipcode="37203" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>Library Association</span>, 416 Broadway, Nashville, TN</li>
+              <li data-address="300 East First St" data-city="Boston" data-state="MA" data-zipcode="37203" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>Amzee and Amzee Park</span>, 300 East First St, Boston, MA</li>
+              <li data-address="416 Broadway" data-city="Nashville" data-state="TN" data-zipcode="37203" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>Ayo Stadium</span>, 416 Broadway, Nashville, TN</li>
+              <li data-city="Providence" data-state="RI" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://backbay.com/"><span>Backbay Community Center</span>, Providence, RI</li>
+              <li data-address="1530 Berkeley Way" data-city="Berkeley" data-state="CA" data-phone="(615) 244-9552" data-email="info@bbclub1.com" data-website="http://robertswesternworld.com/"><span>Bayard County Park</span>, 1530 Berkeley Way, Berkeley, CA</li>
+              <li data-address="22 Fresh Pond Lane" data-city="Cambridge" data-state="MA" data-zipcode="02138" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Wilmington Symphony Orchestra</span>, 22 Fresh Pond Lane, Cambridge, MA</li>
+              <li data-address="44 Larchwood Rd" data-city="Cambridge" data-state="MA" data-zipcode="02138" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Wilmington Public Library</span>, 44 Larchwood Rd, Cambridge, MA</li>
+              <li data-address="1720 Massachusetts Ave" data-city="Lexington" data-state="MA" data-zipcode="02420" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Bicycle Cafe</span>, 1720 Massachusetts Ave, Lexington, MA</li>
+              <li data-address="22 Fresh Pond Parkway" data-city="Cambridge" data-state="MA" data-zipcode="02138" data-phone="(522) 334-3243" data-email="callryn@boomerangs.com" data-website="http://www.boomerangs.com"><span>Boomerangs Nightclub, West</span>, 22 Fresh Pond Parkway, Cambridge, MA</li>
+            </ul>
+            <div class="no-contact-button">Don't see your organization?</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden location existing-contact no-map">
+        <div class="dynamic-html" class="data-right"></div>
+      </div>
+
+      <div class="hidden new-contact-fields">
+        <label class="main-label subheading">Add A New Organization</label><a id="" href="#" class="cancel-link">Cancel</a>
+        <div class="input-wrapper cols-16">
+          <label class="main-label cols-16" for="name">Organization Name<span class="required">*</span></label>
+          <input class="main-input cols-16" type="text" id="name" />
+        </div>
+         <div class="three-up">
+          <div class="one-up-wrapper">
+            <label class="" >Phone:</label>
+            <input class="" type="number" placeholder="" />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="" >Email:</label>
+            <input class="" type="text" placeholder="" />
+          </div>
+          <div class="one-up-wrapper">
+            <label class="" >Website Address:</label>
+            <input class="" type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="input-wrapper cols-16">
+          <label class="main-label">Designation</label>
+          <div class="column-container">
+            <div class="columns-2">
+              <label><input type="radio" name="designation" value="na" checked/> N/A</label>
+            </div>
+            <div class="columns-3">
+              <label><input type="radio" name="designation" value="non-profit" /> Non-profit</label>
+            </div>
+            <div class="columns-3">
+              <label><input type="radio" name="designation" value="for-profit" /> For-profit</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Ticketing Info!!! -->
+
+     <section class="sub-section expandable">
+      <div class="expandable-button">
+        <div class="expandable-inner">
+          <h2>Ticketing Information</h2>
+        </div>
+      </div>
+      <div class="expandable-content">
+        <div class="input-wrapper">
+          <label class="cols-16">Price / Price range</label>
+          <input class="cols-6" type="text" placeholder="$10.00"/>
+        </div>
+
+        <div class="input-wrapper">
+          <label class="cols-16" >Additional Payment Details</label>
+          <input  class="cols-16" type="text" placeholder="e.g. Pay at the door; cash-only."/>
+        </div>
+
+         <div class="input-wrapper">
+          <label class="cols-16">Tickets Link </label>
+          <input class="cols-16" type="text" placeholder="www.purchase-tickets.com"/>
+          <span class="help-text after">If tickets can be acquired online, provide the link here.</span>
+        </div>
+
+      </div>
+    </section>
+
+<!-- Artist/Group Information!!! -->
+
+    <section class="sub-section expandable">
+      <div class="expandable-button">
+        <div class="expandable-inner">
+          <h2>Artist/Group Information</h2>
+        </div>
+      </div>
+      <div class="expandable-content">
+        <div class="input-wrapper">
+          <label class="cols-16">Name</label>
+          <input class="cols-6" type="text"/>
+        </div>
+
+        <div class="input-wrapper">
+          <label class="cols-16" >Email</label>
+          <input  class="cols-16" type="text" />
+        </div>
+
+        <div class="input-wrapper">
+          <label class="cols-16" >Website</label>
+          <input  class="cols-16" type="text" placeholder="www.the-artist.com"/>
+        </div>
+
+
+      </div>
+    </section>
+
+<!-- Event Sponsor(s)!!! -->
+
+    <section class="sub-section expandable">
+      <div class="expandable-button">
+        <div class="expandable-inner">
+          <h2>Event Sponsor(s)</h2>
+        </div>
+      </div>
+      <div class="expandable-content">
+        <div class="duplicator-group">
+          <div class="duplicable">
+            <div class="input-wrapper">
+              <label class="cols-16">Sponsor name:</label>
+              <input class="cols-16" type="text"/>
+            </div>
+
+            <div class="input-wrapper">
+              <label class="cols-16" >Sponsor website:</label>
+              <input  class="cols-16" type="text" placeholder="www.the-sponsor.org"/>
+            </div>
+
+            <div class="input-wrapper">
+              <label>Sponsor logo:</label>
+              <input type="file" placeholder="" />
+            </div>
+            <a href="#" class="remover hidden">Remove this sponsor</a>
+          </div>
+          <a href="#" class="duplicator">Add another sponsor</a>
+          <div class="input-wrapper"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sub-section toggleable">
+      <div class="featured-title-wrapper">
+        <h2 class="toggle-title">Feature This Event</h2>
+        <div class="toggle">
+          <input type="checkbox" id="feature-toggle" switch="bool" />
+          <label for="feature-toggle" data-on-label="Yes" data-off-label="No"></label>
+        </div>
+      </div>
+
+      <div id="featured-event" class="featured-event input-wrapper hidden">
+       <div class="col-container">
+            <div class="cols-7">
+              <label class="cols-3" for="">From: <span class="required">*</span></label>
+              <div class="cols-1">&nbsp;</div>
+              <input type="text" id="featured-start-date" class="cols-12 datepicker start-date-input" id="" placeholder="7/3/2015" />
+            </div>
+            <div class="cols-1">&nbsp;</div>
+            <div class="cols-8">
+              <label class="cols-3"> Until: <span class="required">*</span></label>
+              <div class="cols-1">&nbsp;</div>
+              <input type="text" id="featured-end-date" class="start-date-input datepicker cols-12" placeholder="7/3/2015" />
+            </div>
+
+
+          </div>
+          <div class="col-container">
+            <div class="cols-16">
+              <label class="cols-4" for="">Brief Description: <span class="required">*</span></label>
+              <textarea class="start-time-input cols-12" height="40" id="featured-desc" placeholder="Write a description for the featured events block or let the block automatically pull first 135 characters from description field." ></textarea>
+            </div>
+          </div>
+
+          <div class="col-container">
+            <div class="cols-16">
+              <label id="featured-order-label">Order of Featured Events</label>
+              <ul id="sortable" class="ui-sortable">
+                <li id="new-featured-event" class="ui-state-default ui-sortable-handle ui-sortable-new-event"><span class="ui-icon ui-icon-arrowthick-2-n-s">New Event</span></li>
+                <li class="ui-state-default ui-sortable-handle"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Music In The Park Fridays! <span class="delete-button"></span></li>
+                <li class="ui-state-default ui-sortable-handle"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Community Garden Tour, Featuring Private and Public Gardens <span class="delete-button"></span></li>
+                <li class="ui-state-default ui-sortable-handle"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Live In Concert: Ned James Earnest <span class="delete-button"></span></li>
+                <li class="ui-state-default ui-sortable-handle"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Restaurant Day, Somerville <span class="delete-button"></span></li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+    </section>
+      <button>Preview and Submit</button>
+
+      </div>
+
+
+  </div>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9_V4fG-umELVwoyKKRm4jQ8XODuwV9MA&callback=app.init&sensor=false"></script>
+  <script src="dev/js/libs/jquery.js"></script>
+  <script src="dev/js/libs/awesomplete.js"></script>
+  <script src="dev/js/libs/jquery-ui.min.js"></script>
+  <script src="dev/js/libs/jquery-timepicker.min.js"></script>
+  <script src="dev/js/libs/tabs.js"></script>
+  <script src="dev/js/main.js"></script>
+</body>
+</html>

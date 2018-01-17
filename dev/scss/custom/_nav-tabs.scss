@@ -1,0 +1,70 @@
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  &:before {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 1.5em;
+  list-style: none;
+}
+
+.nav-tabs>li {
+  float: left;
+  margin-bottom: -1px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #000;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-color: transparent;
+}
+
+.nav-tabs>li>a {
+  color: #888;
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  text-decoration: none;
+}
+
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.tab-content>.tab-pane {
+  border: 1px solid #ccc;
+  display: none;
+  overflow: hidden;
+  padding: 1em;
+  border-top: none;
+  margin-top: -1.25em;
+  margin-bottom: 1.5em;
+}
+.tab-content>.active {
+  display: block;
+}
+.fade.in {
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
